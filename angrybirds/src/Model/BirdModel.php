@@ -41,4 +41,9 @@ class BirdModel
     {
         return $this->birds;
     }
+
+    public function getBird($index): array
+    {
+        return $this->birds[$index];
+    }
 }

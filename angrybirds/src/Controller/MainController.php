@@ -23,14 +23,14 @@ class MainController extends AbstractController
     }
 
     #[Route('/bird/{id}', name: 'bird_single')]
-    public function birdSingle($id): Response
+    public function birdSingle(BirdModel $birdModel, $id): Response
     {
-        //dump($id);
-
+        
         return $this->render('main/single.html.twig', [
-
+            'bird' => $birdModel->getBird($id)
         ]);
     }
+
     #[Route('/download/calendar', name: 'calendar')]
     public function calendarDownload(): Response
     {
