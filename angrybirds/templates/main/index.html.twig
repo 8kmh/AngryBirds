@@ -8,6 +8,13 @@
 
 <h2>Game that lodge in the brain often have comical stars</h2>
 
+{% if lastBird is not null %}
+    <p>Last bird seen: <a href="{{ path('bird_single', {'id': lastBirdId}) }}">{{ lastBird.name }}</a></p>
+{% endif %}
+
+<p><a href="{{ path('calendar') }}">Download Calendar</a></p>
+
+
 <div class="container-fluid">
     <div class="row">
         {% for id, bird in birdsList %}

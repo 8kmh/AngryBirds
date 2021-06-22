@@ -37,13 +37,21 @@ class BirdModel
         ],
     ];
 
+
+    // Fournit la liste de tous les oiseaux
     public function getBirds(): array
     {
         return $this->birds;
     }
 
-    public function getBird($index): array
+    // Fournit un seul oiseau avec son id, retourne null si l'index n'existe pas
+    public function getBird(int $index): array | null
     {
-        return $this->birds[$index];
+        if (isset($this->birds[$index])) {
+            return $this->birds[$index]; 
+        } else {
+            return null;
+        }
+        
     }
 }
